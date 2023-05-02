@@ -1,0 +1,12 @@
+[submodule "thirdparty/ohmyzsh"]
+	path = thirdparty/ohmyzsh
+	url = https://github.com/ohmyzsh/ohmyzsh/
+[submodule "thirdparty/zsh-syntax-highlighting"]
+	path = thirdparty/zsh-syntax-highlighting
+	url = https://github.com/zsh-users/zsh-syntax-highlighting/
+[submodule "thirdparty/zsh-autosuggestions"]
+	path = thirdparty/zsh-autosuggestions
+	url = https://github.com/zsh-users/zsh-autosuggestions
+[submodule "thirdparty/ohmytmux"]
+	path = thirdparty/ohmytmux
+	url = https://github.com/gpakosz/.tmux.git
