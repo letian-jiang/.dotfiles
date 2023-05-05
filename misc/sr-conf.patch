@@ -1,0 +1,54 @@
+diff --git a/bin/start_fe.sh b/bin/start_fe.sh
+index f472241..acf7d98 100755
+--- a/bin/start_fe.sh
++++ b/bin/start_fe.sh
+@@ -99,9 +99,9 @@ if [ ${ENABLE_DEBUGGER} -eq 1 ]; then
+     # Allow attaching debuggers to the FE process:
+     # https://www.jetbrains.com/help/idea/attaching-to-local-process.html
+     if [[ "$JAVA_VERSION" -gt 8 ]]; then
+-        final_java_opt="${final_java_opt} -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:5005"
++        final_java_opt="${final_java_opt} -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:8712"
+     else
+-        final_java_opt="${final_java_opt} -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5005"
++        final_java_opt="${final_java_opt} -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=8712"
+     fi
+     echo "Start debugger with: $final_java_opt"
+ fi
+diff --git a/conf/be.conf b/conf/be.conf
+index 6059778..b54956f 100644
+--- a/conf/be.conf
++++ b/conf/be.conf
+@@ -19,10 +19,10 @@
+ sys_log_level = INFO
+ 
+ # ports for admin, web, heartbeat service 
+-be_port = 9060
+-be_http_port = 8040
+-heartbeat_service_port = 9050
+-brpc_port = 8060
++be_port = 9331
++be_http_port = 9332
++heartbeat_service_port = 9333
++brpc_port = 9334
+ 
+ # Enable jaeger tracing by setting jaeger_endpoint
+ # jaeger_endpoint = localhost:6831
+diff --git a/conf/fe.conf b/conf/fe.conf
+index b363a6a..f0ad0d0 100644
+--- a/conf/fe.conf
++++ b/conf/fe.conf
+@@ -40,10 +40,10 @@ sys_log_level = INFO
+ # Default value is ${STARROCKS_HOME}/meta
+ # meta_dir = ${STARROCKS_HOME}/meta
+ 
+-http_port = 8030
+-rpc_port = 9020
+-query_port = 9030
+-edit_log_port = 9010
++http_port = 9231
++rpc_port = 9232
++query_port = 9233
++edit_log_port = 9234
+ mysql_service_nio_enabled = true
+ 
+ # Enable jaeger tracing by setting jaeger_grpc_endpoint
