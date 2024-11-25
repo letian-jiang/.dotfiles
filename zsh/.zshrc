@@ -8,7 +8,7 @@ HIST_STAMPS="mm/dd/yyyy"
 
 plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
 source $ZSH/oh-my-zsh.sh
-source .zsh_aliases
+source $HOME/.zsh_aliases
 
 # User configuration
 export EDITOR='vim'
